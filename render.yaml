@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: buraiga-planning-bot
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: DATABASE_URL
+        value: sqlite:///buraiga_planning.db
